@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Zip Files
         run: |
-          zip -r deployment.zip
+          zip -r deployment.zip .
       - name: Send to Lambda
         uses: appleboy/lambda-action@v0.1.9
         with:
