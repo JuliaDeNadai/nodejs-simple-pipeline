@@ -5,7 +5,6 @@ on:
     - main
 jobs: 
   continuous-deployment:
-  name: Deploy on Lambda
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
