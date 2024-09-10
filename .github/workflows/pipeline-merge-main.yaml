@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Install Dependencies and execute tests
+        run: |
+          npm install --production
       - name: Zip Files
         run: |
           zip -r deployment.zip .
