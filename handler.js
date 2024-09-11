@@ -5,6 +5,6 @@ import {app} from "./src/api.js" // Importa a aplicação Express
 const handler = serverless(app);
 
 // Função exportada para a Lambda
-exports.lambdaHandler = async (event, context) => {
+export const lambdaHandler = async (event, context) => {
   return handler(event, context);
 };
