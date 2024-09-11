@@ -2,9 +2,6 @@ import 'dotenv/config'
 import express, {Router} from "express";
 import morgan from "morgan";
 import AWS from 'aws-sdk';
-import serverless from "serverless-http";
-
-
 
 AWS.config.update({
   accessKeyId: process.env.aws_access_key_id, 
@@ -12,7 +9,7 @@ AWS.config.update({
 });
 AWS.config.update({ region: process.env.region });
 
-export const app = express()
+const app = express()
 const route = Router()
 app.use(morgan('tiny'))
 
@@ -56,4 +53,4 @@ route.post('/notify', (req, res) => {
 app.use(express.json())
 app.use(route)
 
-export const handler = serverless(app);
+export {app}
